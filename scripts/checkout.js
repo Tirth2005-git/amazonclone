@@ -1,11 +1,11 @@
-import { deletecartitem} from "/cart.js";
+import { deletecartitem } from "/cart.js";
+
 import { displayordersummary } from "/ordersummary.js";
 
 displayordersummary();
 
 
 
-    
 document.querySelectorAll(".js-delete").forEach((delbutton) => {
   delbutton.addEventListener("click", () => {
     let itemid = delbutton.dataset.productId;
@@ -13,7 +13,7 @@ document.querySelectorAll(".js-delete").forEach((delbutton) => {
 
     document.querySelector(`.cart-item-container-${itemid}`).remove();
 
-    
+   // calculateprice();
   });
 });
 
@@ -22,13 +22,3 @@ function displaydate(itemid, date) {
 }
 
 
-
-
-let datebutton = document.querySelectorAll(".delivery-option-input");
-datebutton.forEach((datebut) => {
-  datebut.addEventListener("click", () => {
-    displaydate(datebut.dataset.productId, datebut.value);
-
-    
-  });
-});
