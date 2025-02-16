@@ -35,3 +35,13 @@ export function showquant() {
   document.querySelector(".js-cart-quantity").innerHTML = totalquant;
 }
 
+export function deletecartitem(itemid) {
+  let new_cart = [];
+  cart.forEach((cartitem) => {
+    if (cartitem.id != itemid) {
+      new_cart.push(cartitem);
+    }
+  });
+  cart = new_cart;
+  savetocart();
+}
