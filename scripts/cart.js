@@ -45,3 +45,5 @@ export function deletecartitem(itemid) {
   cart = new_cart;
   savetocart();
 }
+
+
