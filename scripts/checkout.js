@@ -21,16 +21,8 @@ function displaydate(itemid, date) {
   document.querySelector(`.delivery-date-${itemid}`).innerHTML = date;
 }
 
-calculateprice();
-export function getdeloptionid() {
-  let ids = [];
-  document.querySelectorAll(".delivery-option-input").forEach((button) => {
-    if (button.checked) {
-      ids.push(button.id);
-    }
-  });
-  return ids;
-}
+
+
 
 let datebutton = document.querySelectorAll(".delivery-option-input");
 datebutton.forEach((datebut) => {
