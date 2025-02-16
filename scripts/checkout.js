@@ -1,5 +1,4 @@
-import { deletecartitem, updatecartquantity } from "/cart.js";
-import { calculateprice } from "/paymentcart.js";
+import { deletecartitem} from "/cart.js";
 import { displayordersummary } from "/ordersummary.js";
 
 displayordersummary();
