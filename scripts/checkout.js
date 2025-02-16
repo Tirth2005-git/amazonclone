@@ -3,29 +3,9 @@ import { displayordersummary } from "/ordersummary.js";
 
 displayordersummary();
 
-document.querySelectorAll(".update-quantity-link").forEach((updateButton) => {
-  updateButton.addEventListener("click", () => {
-    const prodId = updateButton.dataset.productId;
 
-    const inputField = document.querySelector(`.js-select-input-${prodId}`);
-    const saveButton = document.querySelector(`.js-select-save-${prodId}`);
 
-    inputField.style.display = "inline";
-    saveButton.style.display = "inline";
-    updateButton.style.display = "none";
-
-    saveButton.addEventListener("click", () => {
-      document.querySelector(`.quantity-label-${prodId}`).innerHTML =
-        updatecartquantity(prodId);
-      inputField.style.display = "none";
-      saveButton.style.display = "none";
-      updateButton.style.display = "inline";
-
-      calculateprice();
-    });
-  });
-});
-
+    
 document.querySelectorAll(".js-delete").forEach((delbutton) => {
   delbutton.addEventListener("click", () => {
     let itemid = delbutton.dataset.productId;
@@ -33,7 +13,7 @@ document.querySelectorAll(".js-delete").forEach((delbutton) => {
 
     document.querySelector(`.cart-item-container-${itemid}`).remove();
 
-    calculateprice();
+    
   });
 });
 
@@ -57,6 +37,6 @@ datebutton.forEach((datebut) => {
   datebut.addEventListener("click", () => {
     displaydate(datebut.dataset.productId, datebut.value);
 
-    calculateprice();
+    
   });
 });
