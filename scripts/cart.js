@@ -46,4 +46,21 @@ export function deletecartitem(itemid) {
   savetocart();
 }
 
-
+export function updatecartquantity(cartid) {
+  let matchingitem;
+  cart.forEach((cartitem) => {
+    if (cartitem.id === cartid) {
+      matchingitem = cartitem;
+    }
+  });
+  let newquantity = parseInt(
+    document.querySelector(`.js-select-input-${matchingitem.id}`).value
+  );
+  console.log(cartid);
+  console.log( `product id: .js-select-input-${cartid}`);
+  console.log( matchingitem.quantity);
+  matchingitem.quantity = newquantity;
+  console.log( matchingitem.quantity);
+  savetocart();
+  return newquantity
+}
